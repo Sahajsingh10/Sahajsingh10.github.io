@@ -3,20 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-    rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="styles.css"/>
-    <title>Document</title>
+    <title>Resume - Sahaj Singh</title>
+    <style>
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .resume-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .resume-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .resume-header .contact-info {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .resume-header .contact-info a {
+            margin: 0 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .resume-header .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .resume-section {
+            margin-bottom: 2rem;
+        }
+
+        .resume-section h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .resume-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .resume-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .resume-item h3 .date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        .resume-item .position {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .resume-item .organization {
+            color: var(--secondary-color);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .resume-item .location {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-item ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .resume-item ul li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .resume-item p {
+            margin-top: 0.5rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .skills-category {
+            margin-bottom: 1rem;
+        }
+
+        .skills-category h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .skill-tag {
+            background-color: #f3f4f6;
+            color: var(--text-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .download-btn i {
+            margin-right: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 1.5rem;
+            }
+
+            .resume-item h3 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .resume-item h3 .date {
+                margin-top: 0.25rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav>
         <div class="nav_content">
-            <div class="logo"> <a href="#"> Sahaj Singh</a></div>
+            <div class="logo"><a href="index.html">Sahaj Singh</a></div>
             <label for="check" class="checkbox">
                 <i class="ri-menu-line"></i>
-
             </label>
             <input type="checkbox" name="check" id="check">
             <ul>
@@ -28,12 +220,152 @@
         </div>
     </nav>
     <section class="section">
-        <div class="section__container">
-            <div class="content">
-                <div class="resume__embed">
-                    <iframe class="iframe" src="assets/Sahaj Singh - Resume.pdf" frameborder="0"></iframe>
-                    <p class="download_message">If you prefer, you can <a class="download_message" href="assets/resume.pdf" download>download the resume here</a>.</p>
+        <div class="resume-container">
+            <div class="resume-header">
+                <h1>Sahaj Singh</h1>
+                <div class="contact-info"> 
+                    <a href="mailto:worksahaj20@gmail.com">worksahaj20@gmail.com</a> | 
+                    <span>(301)-921-6346</span>
                 </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a> | 
+                    <a href="https://github.com/Sahajsingh10" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="resume-section">
+                <h2>Education</h2>
+                <div class="resume-item">
+                    <h3>
+                        <span class="position">B.S. in Computer Science</span>
+                        <span class="date">September 2020 - May 2024</span>
+                    </h3>
+                    <span class="organization">University Of Maryland College Park</span>
+                    <span class="location">Maryland</span>
+                    <ul>
+                        <li>Concentrations: Machine Learning</li>
+                        <li>Related Coursework: Data Structures & Algorithms, Objects & Design, Computer Organization & Programming, Machine Learning, Artificial Intelligence, Object-Oriented Programming, Statistics & Applications, Computer Security</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="resume-section">
+                <h2>Experience</h2>
+                <div class="resume-item">
+                    <h3>
+                        <span class="position">AI Engineer</span>
+                        <span class="date">October 2024 - Current</span>
+                    </h3>
+                    <span class="organization">Zasti</span>
+                    <span class="location">Ashburn, Virginia</span>
+                    <ul>
+                        <li>Developed and deployed a RAG-based Generative AI wellness chatbot for Alignera, integrating NVIDIA NIM, Groq, and TogetherAI LLMs with multi-provider search capabilities.</li>
+                        <li>Architected and deployed advanced features including contextual pro search, real-time streaming, and automated video summaries, driving user engagement through FastAPI, React, and TypeScript.</li>
+                        <li>Showcased the solution's ROI and technical capabilities to potential clients at Greenbuild Conference 2024, resulting in positive stakeholder feedback on RAG capabilities.</li>
+                    </ul>
+                </div>
+                
+                <div class="resume-item">
+                    <h3>
+                        <span class="position">Intern</span>
+                        <span class="date">June 2023 - August 2023</span>
+                    </h3>
+                    <span class="organization">Infinite Solutions</span>
+                    <span class="location">Rockville, Maryland</span>
+                    <ul>
+                        <li>Spearheaded automation of member rate code validation through Python scripting, eliminating manual errors and reclaiming 10 hours per week of team productivity.</li>
+                        <li>Utilized Python and Excel to identify and resolve member data discrepancies, collaborating closely with data analysts and operations teams to uncover root causes of inconsistencies, reducing inconsistencies by 30% and improving machine learning model accuracy by 5%.</li>
+                    </ul>
+                </div>
+                
+                <div class="resume-item">
+                    <h3>
+                        <span class="position">Intern</span>
+                        <span class="date">December 2022 - January 2022</span>
+                    </h3>
+                    <span class="organization">International Software Systems</span>
+                    <span class="location">Greenbelt, Maryland</span>
+                    <ul>
+                        <li>Enhanced asset management through IATS software implementation, achieving 100% tracking accuracy and reducing discrepancies by 20%.</li>
+                        <li>Executed comprehensive OS deployment across Windows, Linux-Ubuntu, and Kali platforms, resulting in 25% efficiency improvement through standardized infrastructure.</li>
+                        <li>Optimized enterprise-wide hardware integration, delivering 98% network uptime and 15% performance improvement through strategic domain architecture.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="resume-section">
+                <h2>Projects</h2>
+                <div class="resume-item">
+                    <h3>
+                        <span class="position">Fitness Trainer Chatbot</span>
+                        <span class="date">October 2024</span>
+                    </h3>
+                    <span class="location">Ashburn, Virginia</span>
+                    <ul>
+                        <li>Designed an AI fitness chatbot leveraging the Meta Llama 2 model in Pytorch, Integrating RAG architecture with ChromaDB for knowledge retrieval.</li>
+                        <li>Accelerated model performance through PEFT and LoRA techniques, achieving efficient deployment via 4-bit quantization.</li>
+                    </ul>
+                </div>
+                
+                <div class="resume-item">
+                    <h3>
+                        <span class="position">Skin Melanoma Prediction</span>
+                        <span class="date">May 2024</span>
+                    </h3>
+                    <span class="location">College Park, Maryland</span>
+                    <ul>
+                        <li>Trained a convolutional neural network in Pytorch on a dataset of 10,000 dermoscopic images, incorporating advanced data augmentation and normalization techniques.</li>
+                        <li>Achieved a test accuracy of 90% in identifying melanoma cases, demonstrating the model's potential as a screening tool to aid in early skin cancer detection.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="resume-section">
+                <h2>Skills</h2>
+                <div class="skills-category">
+                    <h4>Programming</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">C</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h4>Tools</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">IntelliJ</span>
+                        <span class="skill-tag">PyCharm</span>
+                        <span class="skill-tag">Eclipse</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Jupyter Notebooks</span>
+                        <span class="skill-tag">Visual Studio Code</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h4>Libraries</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Button -->
+            <div style="text-align: center;">
+                <a href="assets/Sahaj Singh - Resume.pdf" download class="download-btn">
+                    <i class="ri-download-line"></i> Download Full Resume
+                </a>
             </div>
         </div>
     </section>

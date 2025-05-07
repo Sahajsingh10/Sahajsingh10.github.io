@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-    rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="styles.css"/>
-    <title>Document</title>
+    <title>Contact Me - Sahaj Singh</title>
 </head>
 <body>
     <nav>
         <div class="nav_content">
-            <div class="logo"> <a href="#"> Sahaj Singh</a></div>
+            <div class="logo"><a href="index.html">Sahaj Singh</a></div>
             <label for="check" class="checkbox">
                 <i class="ri-menu-line"></i>
-
             </label>
             <input type="checkbox" name="check" id="check">
             <ul>
@@ -30,6 +26,7 @@
     <section class="section">
         <div class="form-wrapper">
             <div class="my_form">
+                <h2 style="margin-bottom: 1.5rem; text-align: center;">Get In Touch</h2>
                 <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="d6d17511-2d54-4a15-88d0-c59d1b5fd2d6">
                     
@@ -38,24 +35,28 @@
                     <input type="text" id="email" name="email" placeholder="Your Email" required>
                     
                     <select id="country" name="country" required>
+                        <option value="" disabled selected>Select Your Country</option>
                         <option value="usa">USA</option>
                         <option value="canada">Canada</option>
                         <option value="india">India</option>
+                        <option value="other">Other</option>
                     </select>
                     
                     <textarea id="message" name="message" placeholder="Your Message..." style="height:200px" required></textarea>
                     
-                    <input type="submit" value="Submit">
-                    <input type="submit" value="Reset" onclick="handleReset()"></input>
+                    <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                        <input type="submit" value="Reset" onclick="handleReset(event)" style="background-color: #e5e7eb; color: #4b5563;">
+                        <input type="submit" value="Submit">
+                    </div>
                 </form>
             </div>
         </div>
     </section>
     <script>
-        function handleReset() {
+        function handleReset(event) {
+            event.preventDefault();
             const form = document.getElementById('contact-form');
             form.reset(); // Clear the form fields
-            window.location.href = 'contact_me.html'; // Redirect to home or another page
         }
     </script>
 </body>
